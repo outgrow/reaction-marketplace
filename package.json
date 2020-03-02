@@ -1,7 +1,7 @@
 {
   "name": "@outgrowio/reaction-marketplace",
   "description": "A multi-vendor marketplace plugin for Reaction Commerce",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "main": "index.js",
   "type": "module",
   "homepage": "https://github.com/outgrow/reaction-marketplace",
