@@ -1,6 +1,6 @@
 # reaction-marketplace
 
-[![npm (scoped)](https://img.shields.io/npm/v/@outgrowio/reaction-dummy-data.svg)](https://www.npmjs.com/package/@outgrowio/reaction-dummy-data)
+[![npm (scoped)](https://img.shields.io/npm/v/@outgrowio/reaction-marketplace.svg)](https://www.npmjs.com/package/@outgrowio/reaction-marketplace)
 
 A multi-vendor marketplace plugin for Reaction Commerce.
 
