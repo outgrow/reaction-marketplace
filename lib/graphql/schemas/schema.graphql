@@ -1,0 +1,82 @@
+extend type Mutation {
+    "Invite a new marketplace shop owner"
+    inviteShopOwner(
+        "Mutation input"
+        input: InviteShopOwnerInput
+    ): InviteShopOwnerPayload!
+}
+
+extend type Query {
+    "Get a list of the shops"
+    shops(
+        "Return at most this many results. This parameter may be used with either `after` or `offset` parameters."
+        first: ConnectionLimitInt,
+
+        "Return at most this many results. This parameter may be used with the `before` parameter."
+        last: ConnectionLimitInt,
+
+        "Return only results that come after the Nth result. This parameter may be used with the `first` parameter."
+        offset: Int
+    ): ShopConnection
+}
+
+extend type Shop {
+    "The date the shop was created"
+    createdAt: DateTime!
+
+    "The shop owner's full name"
+    owner: String
+
+    "The amount of products that the shop contains"
+    productCount: Int
+}
+
+"A connection edge in which each node is a `Shop` object"
+type ShopEdge {
+    "The cursor that represents this node in the paginated results"
+    cursor: ConnectionCursor!
+
+    "The shop"
+    node: Shop
+}
+
+"""
+Wraps a list of `Shop`s, providing pagination cursors and information.
+"""
+type ShopConnection {
+    "The list of nodes that match the query, wrapped in an edge to provide a cursor string for each"
+    edges: [ShopEdge]
+
+    """
+    You can request the `nodes` directly to avoid the extra wrapping that `NodeEdge` has,
+    if you know you will not need to paginate the results.
+    """
+    nodes: [Shop]
+
+    "Information to help a client request the next or previous page"
+    pageInfo: PageInfo!
+
+    "The total number of nodes that match your query"
+    totalCount: Int!
+}
+
+"Input for the `inviteShopOwner` mutation"
+input InviteShopOwnerInput {
+    "An optional string identifying the mutation call, which will be returned in the response payload"
+    clientMutationId: String
+
+    "The shop owner's e-mail address"
+    emailAddress: String!
+
+    "The shop owner's name"
+    name: String!
+}
+
+"Response from the `invieShopOwner` mutation"
+type InviteShopOwnerPayload {
+    "The same string you sent with the mutation params, for matching mutation calls with their responses"
+    clientMutationId: String
+
+    "Whether the invitation was sent or not"
+    wasInviteSent: Boolean!
+}

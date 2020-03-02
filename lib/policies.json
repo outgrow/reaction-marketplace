@@ -1,0 +1,11 @@
+[
+  {
+    "description": "Account managers acting on all entities.",
+    "subjects": [ "reaction:groups:shop-managers" ],
+    "resources": [ "reaction:legacy:shops" ],
+    "actions": [
+      "read:admin-accounts"
+    ],
+    "effect": "allow"
+  }
+]
