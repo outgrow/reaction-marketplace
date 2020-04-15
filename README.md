@@ -2,7 +2,7 @@
 
 [![npm (scoped)](https://img.shields.io/npm/v/@outgrowio/reaction-marketplace.svg)](https://www.npmjs.com/package/@outgrowio/reaction-marketplace)
 
-A multi-vendor marketplace plugin for Reaction Commerce. Still in beta — use at your own risk.
+A multi-vendor marketplace plugin for Reaction Commerce. Still in beta — currently unuasable until [some changes are made to `reaction-admin` to support multi-shop setups](https://github.com/reactioncommerce/reaction-admin/issues/93#issuecomment-598295994).
 
 ## How to use
 
