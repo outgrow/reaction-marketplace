@@ -2,7 +2,7 @@
 
 [![npm (scoped)](https://img.shields.io/npm/v/@outgrowio/reaction-marketplace.svg)](https://www.npmjs.com/package/@outgrowio/reaction-marketplace)
 
-A multi-vendor marketplace plugin for Reaction Commerce. Still in beta — currently unusable until [some changes are made to `reaction-admin` to support multi-shop setups](https://github.com/reactioncommerce/reaction-admin/issues/93#issuecomment-598295994).
+A multi-vendor marketplace plugin for Reaction Commerce. Still in beta and is for now limited to sending e-mail invitations for vendors to sign-up and create their shops.
 
 ## How to use
 
@@ -12,14 +12,13 @@ First, install the package in your project's `reaction` (API) directory:
 npm install --save-dev @outgrowio/reaction-marketplace
 ```
 
-Then, register the plugin in your project's `reaction/src/registerPlugins.js`, calling the function at the end of the file:
+Then, register the plugin in your project's `reaction/plugins.json`, calling the function at the end of the file:
 
-```js
-import registerMarketplace from "@outgrowio/reaction-marketplace/index.js";
-
-// Built-in plugin register calls go here
-
-await registerMarketplace(app);
+```json
+{
+  ...,
+  "marketplace": "@outgrowio/reaction-marketplace/index.js"
+}
 ```
 
 ## User interface
