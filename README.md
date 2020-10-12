@@ -56,8 +56,8 @@ Call with the following variables:
 ### List all shops (paginated)
 
 ```graphql
-query shops($first: ConnectionLimitInt, $last: ConnectionLimitInt, $offset: Int) {
-    shops(first: $first, last: $last, offset: $offset) {
+query shops($shopIds: [ID], $first: ConnectionLimitInt, $last: ConnectionLimitInt, $offset: Int) {
+    shops(shopIds: $shopIds, first: $first, last: $last, offset: $offset) {
         pageInfo {
             endCursor
             startCursor
@@ -75,12 +75,12 @@ query shops($first: ConnectionLimitInt, $last: ConnectionLimitInt, $offset: Int)
 }
 ```
 
-Call with the following variables:
+Call with an optional `shopIds` variable (returns all shops if no `shopIds` are passed):
 
 ```json
 {
     "input": {
-        "shopId": "kspBu62vAyXnnb2v6"
+        "shopIds": ["kspBu62vAyXnnb2v6"]
     }
 }
 ```
